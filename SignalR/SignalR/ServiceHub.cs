@@ -5,11 +5,11 @@ using System.Linq;
 using System.Web;
 
 namespace SignalR.SignalR {
-    public class MyChat : Hub {
+    public class ServiceHub : Hub {
 
-        public void Send(string message) {
+        public void Send(string name, string message) {
 
-            //Clients.addMessage(message);
+            Clients.All.addNewMessageToPage(name, message);
 
         }
 
